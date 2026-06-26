@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+//状態はステートマシンでかんりisLoading.isSuccess/isErrorみたいに並べない
 type Status = 'typing' | 'submitting' | 'success';
 
 export default function Form() {
@@ -37,6 +38,7 @@ export default function Form() {
         <textarea
           value={answer}
           onChange={handleTextareaChange}
+          //disabledはできないということ
           disabled={status === 'submitting'}
         />
         <br />
